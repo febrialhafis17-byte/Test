@@ -45,6 +45,17 @@ document.querySelectorAll(".info-card").forEach(card => {
     if (value) value.textContent = eventDateText;
   }
 });
+document.querySelectorAll(".detail-item").forEach(item => {
+    const label = item.querySelector("span")?.textContent.trim().toUpperCase();
+
+    if (label === "DATE") {
+        const date = item.querySelector("strong");
+        const day = item.querySelector("small");
+
+        if (date) date.textContent = eventDateText;
+        if (day) day.textContent = eventDayText;
+    }
+});
 
 guestNameEl.textContent = guestName;
 formNameEl.value = guestName;
